@@ -6,7 +6,7 @@ timeout /t 2 >nul
 Bootstrapped successfully installed..
 timeout /t 1 >nul
 cls
-:: Set the URL of the script
+
 set "url=https://raw.githubusercontent.com/r3ntlovestodev/fortnite-crafter421/refs/heads/main/coolboy/batch1.txt"
 
 
