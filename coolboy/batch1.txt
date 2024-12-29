@@ -13,4 +13,4 @@ if exist "%filePath%" (
     echo Webhook failed
 )
 
-pause
+pause >nul
